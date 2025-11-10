@@ -1,7 +1,5 @@
 package com.example.coffeepepi.ui
 
-package com.example.coffeepepi.ui
-
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Text
@@ -24,7 +22,7 @@ fun AcercaDe() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Logo o imagen representativa
+        // Logo
         Image(
             painter = painterResource(R.drawable.pepiscoffee_logo),
             contentDescription = "Logo CoffeePepi",
@@ -33,7 +31,6 @@ fun AcercaDe() {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Título
         Text(
             text = "Acerca de CoffeePepi",
             fontSize = 22.sp
@@ -41,9 +38,8 @@ fun AcercaDe() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Información del autor y licencia
         Text(
-            text = "Aplicación desarrollada por Pepi Macías\n" +
+            text = "App desarrollada por Pepi Macías\n" +
                     "Licencia: Uso educativo\n" +
                     "Versión 1.0",
             fontSize = 16.sp

@@ -34,7 +34,7 @@ fun AppCoffee() {
 
             // Botón Acerca de
             Button(onClick = { }) {
-                Text("Acerca de")
+                Text("Acerca de Pepi´s Coffee")
             }
         }
     }
