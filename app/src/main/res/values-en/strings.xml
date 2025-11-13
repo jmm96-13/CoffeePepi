@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">CoffeePepi</string>
     <string name="about_title">About CoffeePepi</string>
-    <string name="author_name">Pepi Macías</string>
+    <string name="about_us_title">About us</string>
+    <string name="author_name">Pepi Macias</string>
 </resources>

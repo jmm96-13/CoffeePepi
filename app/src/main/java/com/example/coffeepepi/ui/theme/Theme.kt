@@ -50,8 +50,7 @@ val unspecified_scheme = ColorFamily(
 @Composable
 fun CoffeePepiTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,  //false para que funcione dark
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {

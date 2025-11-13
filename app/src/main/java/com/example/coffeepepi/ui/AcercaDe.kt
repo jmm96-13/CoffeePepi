@@ -1,7 +1,9 @@
 package com.example.coffeepepi.ui
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,10 +20,13 @@ fun AcercaDe() {
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
             .padding(16.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Spacer(modifier = Modifier.height(20.dp))
+
         // Logo
         Image(
             painter = painterResource(R.drawable.pepiscoffee_logo),
@@ -39,8 +44,8 @@ fun AcercaDe() {
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "App desarrollada por Pepi Macías\n" +
-                    "Licencia: Uso educativo\n" +
+            text = "App desarrollada por Pepi Macías " +
+                    "Licencia: Educativa " +
                     "Versión 1.0",
             fontSize = 16.sp
         )
