@@ -21,8 +21,8 @@ import androidx.compose.ui.res.stringResource
 @Composable
 fun AppCoffee() {
     val context = LocalContext.current
-    //val acercaDe = context.getString(R.string.about_title)
-    //val sobreNosotros = "Sobre Nosotros"
+    val acercaDe = context.getString(R.string.about_title)
+    val sobreNosotros = context.getString(R.string.about_us_title)
 
         Column(
             modifier = Modifier
@@ -46,12 +46,12 @@ fun AppCoffee() {
 
             // Botón Acerca de
             Button(onClick = { }) {
-                Text(stringResource(R.string.about_title))
+                Text(acercaDe)
             }
 
             // Botón Sobre Nosotros
             Button(onClick = { }) {
-                Text(stringResource(R.string.about_us_title))
+                Text(sobreNosotros)
             }
         }
     }
