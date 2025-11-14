@@ -21,8 +21,8 @@ import androidx.compose.ui.res.stringResource
 @Composable
 fun AppCoffee() {
     val context = LocalContext.current
-    val acercaDe = context.getString(R.string.about_title)
-    val sobreNosotros = "Sobre Nosotros"
+    //val acercaDe = context.getString(R.string.about_title)
+    //val sobreNosotros = "Sobre Nosotros"
 
         Column(
             modifier = Modifier
