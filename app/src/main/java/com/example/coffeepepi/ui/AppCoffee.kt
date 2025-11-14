@@ -16,7 +16,6 @@ import androidx.compose.foundation.background
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.ui.res.stringResource
 
 @Composable
 fun AppCoffee() {
