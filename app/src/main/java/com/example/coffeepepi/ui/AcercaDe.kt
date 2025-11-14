@@ -17,6 +17,10 @@ import com.example.coffeepepi.ui.theme.CoffeePepiTheme
 
 @Composable
 fun AcercaDe() {
+
+    val titulo = "Acerca de Pepi´s Coffee"
+    val autor = "Pepi Macias"
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -25,9 +29,9 @@ fun AcercaDe() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+
         Spacer(modifier = Modifier.height(20.dp))
 
-        // Logo
         Image(
             painter = painterResource(R.drawable.pepiscoffee_logo),
             contentDescription = "Logo CoffeePepi",
@@ -37,17 +41,17 @@ fun AcercaDe() {
         Spacer(modifier = Modifier.height(24.dp))
 
         Text(
-            text = "Acerca de CoffeePepi",
-            fontSize = 22.sp
+            text = titulo,
+            fontSize = 22.sp,
+            color = MaterialTheme.colorScheme.primary
         )
 
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "App desarrollada por Pepi Macías " +
-                    "Licencia: Educativa " +
-                    "Versión 1.0",
-            fontSize = 16.sp
+            text = "App desarrollada por $autor\nLicencia: Educativa\nVersión 1.0",
+            fontSize = 16.sp,
+            color = MaterialTheme.colorScheme.onBackground
         )
     }
 }

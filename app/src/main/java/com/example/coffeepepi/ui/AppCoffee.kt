@@ -14,21 +14,27 @@ import com.example.coffeepepi.R
 import com.example.coffeepepi.ui.theme.CoffeePepiTheme
 import androidx.compose.foundation.background
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.ui.res.stringResource
-
 
 @Composable
 fun AppCoffee() {
+    val context = LocalContext.current
+    val acercaDe = context.getString(R.string.about_title)
+    val sobreNosotros = "Sobre Nosotros"
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .background(MaterialTheme.colorScheme.background)
                 .padding(16.dp),
-
             verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+
             Spacer(modifier = Modifier.height(60.dp))
+
             //logo
             Image(
                 painter = painterResource(R.drawable.pepiscoffee_logo),
@@ -40,13 +46,11 @@ fun AppCoffee() {
 
             // Botón Acerca de
             Button(onClick = { }) {
-                //Text("Acerca de Pepi´s Coffee")
                 Text(stringResource(R.string.about_title))
             }
 
             // Botón Sobre Nosotros
             Button(onClick = { }) {
-                //Text("Sobre Nosotros")
                 Text(stringResource(R.string.about_us_title))
             }
         }
