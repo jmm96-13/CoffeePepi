@@ -8,6 +8,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.coffeepepi.R
@@ -17,20 +18,22 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun Configuracion() {
+
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     val dataStore = remember { ConfiguracionDataStore(context) }
 
+    // Estado local del switch
     var notificacionesActivas by rememberSaveable { mutableStateOf(false) }
 
-    LaunchedEffect(notificacionesGuardadas.value) {
-        notificacionesActivas = notificacionesGuardadas.value
-    }
-
+    // Estado guardado en DataStore (Flow -> State)
     val notificacionesGuardadas =
         dataStore.notificationsFlow.collectAsState(initial = false)
 
-    //val scrollState = rememberScrollState()
+    // Sincronizar el estado local con DataStore
+    LaunchedEffect(notificacionesGuardadas.value) {
+        notificacionesActivas = notificacionesGuardadas.value
+    }
 
     Column(
         modifier = Modifier
@@ -64,7 +67,6 @@ fun Configuracion() {
 
         Spacer(Modifier.height(16.dp))
 
-        // Botón para GUARDAR en DataStore (como Save Email)
         Button(
             onClick = {
                 scope.launch {
@@ -77,7 +79,6 @@ fun Configuracion() {
 
         Spacer(Modifier.height(24.dp))
 
-        // Mostrar lo que hay GUARDADO en DataStore (equivalente a userEmail.value!!)
         Text(
             text = if (notificacionesGuardadas.value)
                 stringResource(R.string.config_notifications_on)
